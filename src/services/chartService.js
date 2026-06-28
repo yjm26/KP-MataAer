@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/chart";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/chart`;
 
 // Ambil total surat masuk & keluar
 export async function getChartData() {
@@ -6,4 +6,3 @@ export async function getChartData() {
   if (!res.ok) throw new Error("Gagal mengambil data chart");
   return await res.json();
 }
-

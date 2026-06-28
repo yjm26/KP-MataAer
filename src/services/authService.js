@@ -1,12 +1,12 @@
+const API_URL = `${import.meta.env.VITE_API_URL}/api/login`;
+
 export async function login({ email, password }) {
-  const res = await fetch("http://localhost:5000/api/login", {
+  const res = await fetch(API_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
-    // credentials: "include", // HAPUS baris ini jika tidak pakai session/cookie
   });
   if (!res.ok) throw new Error("Login gagal");
   const user = await res.json();
   return user;
 }
-

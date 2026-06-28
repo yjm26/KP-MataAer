@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/surat-masuk";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/surat-masuk`;
 
 // GET semua surat masuk
 export async function getSuratMasuk() {
@@ -48,7 +48,7 @@ export async function updateSuratMasuk(nomorSurat, formData) {
 
 // DELETE surat masuk
 export async function deleteSuratMasuk(nomor_surat) {
-  const response = await fetch(`http://localhost:5000/api/surat-masuk/${nomor_surat}`, {
+  const response = await fetch(`${API_URL}/${nomor_surat}`, {
     method: 'DELETE',
   });
   if (!response.ok) throw new Error('Gagal menghapus surat masuk');

@@ -91,7 +91,7 @@ function SuratKeluar() {
         if (typeof row.lampiran === "string" && row.lampiran !== "") {
           return (
             <a
-              href={`http://localhost:5000/uploads/${row.lampiran}`}
+              href={`${import.meta.env.VITE_API_URL}/uploads/${row.lampiran}`}
               download
               target="_blank"
               rel="noopener noreferrer"
